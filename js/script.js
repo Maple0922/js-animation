@@ -56,7 +56,7 @@ $(function(){
 
   $('.polkadot').children('.main__button').click(function(){
     // size,fadeOutSecond,repeatSecond,darkness,lightness
-    polkadot(200,3000,10,120,240);
+    polkadot(200,5000,20,100,220);
   });
 
 });
