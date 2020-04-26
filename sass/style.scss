@@ -51,13 +51,26 @@
   &__space {
     border: 2px solid $super-light-gray;
     border-radius: 4px;
-    min-height: 400px;
+    min-height: 300px;
     position: relative;
+    overflow: hidden;
+  }
+
+  // polkadot
+  .polkadot {
+    p {
+      position: absolute;
+      // background: gray;
+      border-radius: 50%;
+      width: 1px;
+      height: 1px;
+      transition: 1s;
+      border: 1px solid gray;
+    }
+    .transform {
+      transform: scale(100);
+      opacity: 0;
+      transition: 1s;
+    }
   }
 }
-
-.footer {
-
-}
-
-// node-sass sass/style.scss css/style.css -w
