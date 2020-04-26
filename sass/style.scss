@@ -74,7 +74,18 @@
   .polkadot {
     p {
       position: absolute;
-      background: transparent;
+      border-radius: 50%;
+      width: 1px;
+      height: 1px;
+    }
+  }
+
+  // rain
+  .rain {
+    p {
+      position: absolute;
+      border: 1px solid rgb(140, 195, 193);
+      background: rgb(210, 227, 221);
       border-radius: 50%;
       width: 1px;
       height: 1px;
