@@ -75,7 +75,8 @@ a, input, button, textarea, select, option {
     background: #fcfcfc;
     padding: 24px;
     border-radius: 6px;
-    box-shadow: 0 0 8px 0 #bbb; }
+    box-shadow: 0 0 8px 0 #bbb;
+    position: relative; }
     @media screen and (min-width: 1000px) {
       .main__container {
         width: calc((100% - 96px)/3); } }
@@ -90,6 +91,17 @@ a, input, button, textarea, select, option {
     padding: 0 10px;
     font-size: 1.8rem;
     margin-bottom: 16px; }
+  .main__button {
+    position: absolute;
+    top: 26px;
+    right: 32px;
+    border-radius: 6px;
+    color: #fcfcfc;
+    background: #666;
+    padding: 2px 10px;
+    transition: 0.6s; }
+    .main__button:hover {
+      opacity: 0.6; }
   .main__space {
     border: 2px solid #eee;
     border-radius: 4px;
@@ -98,12 +110,7 @@ a, input, button, textarea, select, option {
     overflow: hidden; }
   .main .polkadot p {
     position: absolute;
+    background: transparent;
     border-radius: 50%;
     width: 1px;
-    height: 1px;
-    transition: 1s;
-    border: 1px solid gray; }
-  .main .polkadot .transform {
-    transform: scale(100);
-    opacity: 0;
-    transition: 1s; }
+    height: 1px; }

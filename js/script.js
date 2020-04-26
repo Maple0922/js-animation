@@ -8,30 +8,55 @@ $(function(){
     return Math.floor(Math.random()*(n-m+1)) + m;
   }
 
-  const random = () => {
+  const randomValue = (darkness,lightness) => {
     const randomLeft = randomInt(0,spaceWidth);
     const randomTop = randomInt(0,spaceHeight);
-    return {left:randomLeft,top:randomTop};
+    const randomRed = randomInt(darkness,lightness);
+    const randomGreen = randomInt(darkness,lightness);
+    const randomBlue = randomInt(darkness,lightness);
+    return {
+      left: randomLeft,
+      top: randomTop,
+      red: randomRed,
+      green: randomGreen,
+      blue: randomBlue
+    };
   }
 
   // polkadot
-  const polkadot = $('.polkadot').children('.main__space');
+  const polkadotSpace = $('.polkadot').children('.main__space');
 
-  setInterval(function(){
-    const randomPoint = random();
-    const dot = $('<p>');
+  const polkadot = (size,fadeOutSecond,repeatSecond,darkness,lightness) => {
 
-    dot.css({
-      'top': randomPoint.top,
-      'left': randomPoint.left,
-    });
-    polkadot.append(dot);
+    setInterval(function(){
+      const random = randomValue(darkness,lightness);
+      const dot = $('<p>');
 
-    console.log('fot');
+      dot.css({
+        'top': random.top,
+        'left': random.left,
+        'background': `rgb(${random.red},${random.green},${random.blue})`
+      });
+      polkadotSpace.append(dot);
 
-    setTimeout(function(){
-      $('p').addClass('transform');
-    },10);
+      dot.animate({
+        'width':size,
+        'height':size,
+        'opacity':'0',
+        'top': random.top-(size/2),
+        'left': random.left-(size/2),
+      },fadeOutSecond);
 
-  },10);
+      setTimeout(function(){
+        dot.remove();
+      },fadeOutSecond);
+
+    },repeatSecond);
+  }
+
+  $('.polkadot').children('.main__button').click(function(){
+    // size,fadeOutSecond,repeatSecond,darkness,lightness
+    polkadot(300,5000,10,100,220);
+  });
+
 });

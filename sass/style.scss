@@ -41,12 +41,26 @@
     padding: 24px;
     border-radius: 6px;
     box-shadow: $basic-shadow;
+    position: relative;
   }
   &__title {
     border-bottom: 2px solid $super-light-gray;
     padding: 0 10px;
     font-size: 1.8rem;
     margin-bottom: 16px;
+  }
+  &__button {
+    position: absolute;
+    top: 26px;
+    right: 32px;
+    border-radius: 6px;
+    color: $white;
+    background: $dark-gray;
+    padding: 2px 10px;
+    transition: 0.6s;
+    &:hover {
+      opacity: 0.6;
+    }
   }
   &__space {
     border: 2px solid $super-light-gray;
@@ -60,17 +74,10 @@
   .polkadot {
     p {
       position: absolute;
-      // background: gray;
+      background: transparent;
       border-radius: 50%;
       width: 1px;
       height: 1px;
-      transition: 1s;
-      border: 1px solid gray;
-    }
-    .transform {
-      transform: scale(100);
-      opacity: 0;
-      transition: 1s;
     }
   }
 }
