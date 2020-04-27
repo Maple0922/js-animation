@@ -107,7 +107,7 @@ $(function(){
 
   $('.rain').children('.main__button').click(function(){
     // size,fadeOutSecond,repeatSecond,darkness,lightness
-    rain(50,800,40,null,null);
+    rain(50,600,40,null,null);
   });
 
 });
